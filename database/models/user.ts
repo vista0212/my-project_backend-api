@@ -13,6 +13,7 @@ import {
   HasMany,
   Default,
 } from 'sequelize-typescript';
+import Post from './post';
 
 @Table({
   timestamps: true,
@@ -45,4 +46,7 @@ export default class User extends Model<User> {
 
   @UpdatedAt
   public updatedAt: Date;
+
+  @HasMany(() => Post)
+  public post: Post;
 }
