@@ -1,5 +1,7 @@
 import { Router } from 'express';
 
+import updateUserInfo from './updateUserInfo/updateUserController';
+
 import RegisterValidation from '../middleware/user/register/_validation';
 import LoginValidation from '../middleware/user/login/_validation';
 
@@ -15,6 +17,8 @@ import login from '../middleware/user/login/login';
 import issueToken from '../middleware/jwt/issueToken';
 
 const router = Router();
+
+router.use('/change', updateUserInfo);
 
 router.post('/register', RegisterValidation);
 router.post('/login', LoginValidation);
