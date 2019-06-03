@@ -13,6 +13,6 @@ const router = Router();
 
 router.use(verifyToken);
 
-router.post('/password', passwordValidation, checkValidation, passwordEncryption, changePassword);
+router.patch('/password', passwordValidation, checkValidation, passwordEncryption, changePassword);
 
 export default Router;

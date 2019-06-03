@@ -15,7 +15,7 @@ const router = Router();
 router.use(verifyToken);
 
 router.post('/write', postValidation);
-router.post('/delete', findPost, checkUser, deletePost);
+router.delete('/delete', findPost, checkUser, deletePost);
 
 router.use(checkValidation);
 
