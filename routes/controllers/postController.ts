@@ -10,6 +10,7 @@ import createPost from '../middleware/post/createPost';
 import checkUser from '../middleware/post/common/checkUser';
 import deletePost from '../middleware/post/deletePost';
 import editPost from '../middleware/post/editPost';
+import likePost from '../middleware/post/likePost';
 
 const router = Router();
 
@@ -18,6 +19,7 @@ router.use(verifyToken);
 router.post('/write', postValidation);
 router.delete('/delete', findPost, checkUser, deletePost);
 router.put('/edit', postValidation);
+router.post('/like', findPost, likePost);
 
 router.use(checkValidation);
 
