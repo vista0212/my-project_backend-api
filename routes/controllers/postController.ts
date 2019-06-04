@@ -1,5 +1,7 @@
 import { Router } from 'express';
 
+import commentController from './comment/commentController';
+
 import verifyToken from '../middleware/jwt/verifyToken';
 import postValidation from '../middleware/post/_validation';
 import checkValidation from '../middleware/common/checkValidation';
@@ -13,6 +15,8 @@ import editPost from '../middleware/post/editPost';
 import likePost from '../middleware/post/likePost';
 
 const router = Router();
+
+router.use('/comment', commentController);
 
 router.use(verifyToken);
 
