@@ -14,6 +14,7 @@ import {
   Default,
 } from 'sequelize-typescript';
 import Post from './post';
+import PostLike from './postLike';
 
 @Table({
   timestamps: true,
@@ -49,4 +50,7 @@ export default class User extends Model<User> {
 
   @HasMany(() => Post)
   public post: Post;
+
+  @HasMany(() => PostLike)
+  public postLike: PostLike;
 }

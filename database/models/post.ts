@@ -14,6 +14,7 @@ import {
   Default,
 } from 'sequelize-typescript';
 import User from './user';
+import PostLike from './postLike';
 
 @Table({
   timestamps: true,
@@ -49,4 +50,9 @@ export default class Post extends Model<Post> {
     onDelete: 'CASCADE',
   })
   public user: User;
+
+  @HasMany(() => PostLike, {
+    onDelete: 'CASCADE',
+  })
+  public postLike: PostLike;
 }
